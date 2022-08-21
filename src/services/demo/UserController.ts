@@ -24,6 +24,14 @@ export async function queryUserList(
   });
 }
 
+/** 此处后端没有提供注释 GET /api/v1/queryUserList */
+export async function test(options?: { [key: string]: any }) {
+  return request<API.Result_PageInfo_UserInfo__>('/api/hello', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** 此处后端没有提供注释 POST /api/v1/user */
 export async function addUser(
   body?: API.UserInfoVO,
